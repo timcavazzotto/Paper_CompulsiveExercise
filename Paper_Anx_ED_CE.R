@@ -13,6 +13,7 @@ load("Meta2.RData") #dataBF2
 load("Meta3.RData") #dataBF3
 load("Meta4.RData") #dataBF4
 
+dataBF4 <- dataBF4[-c(6,7), ] #Excluding studies with men
 
 ##### meta #####
 
@@ -39,7 +40,7 @@ metabias(meta1, method.bias = "linreg",k.min = 5)
 forest(meta1,
        sortvar = TE,
        rightlabs = c("SMD","95% CI", "Weight"),
-       text.random = "Random EffCEt",
+       text.random = "Random Effect",
        smlab = "SMD",
        digits.sd = 2,
        leftlabs=c("", "n", "M","SD", "n", "M", "SD"),
@@ -77,7 +78,7 @@ metabias(meta2, method.bias = "linreg",k.min = 5)
 forest(meta2,  
        sortvar = TE,
        rightlabs = c("SMD","95% CI", "Weight"),
-       text.random = "Random EffCEt",
+       text.random = "Random Effect",
        smlab = "SMD",
        digits.sd = 2,
        leftlabs=c("", "n", "M","SD", "n", "M", "SD"),
@@ -114,7 +115,7 @@ metabias(meta3, method.bias = "linreg",k.min = 5)
 forest(meta3,  
        sortvar = TE,
        rightlabs = c("SMD","95% CI", "Weight"),
-       text.random = "Random EffCEt",
+       text.random = "Random Effect",
        smlab = "SMD",
        digits.sd = 2,
        leftlabs=c("", "n", "M","SD", "n", "M", "SD"),
@@ -150,7 +151,7 @@ metabias(meta4, method.bias = "linreg",k.min = 5)
 forest(meta4,  
        sortvar = TE,
        rightlabs = c("SMD","95% CI", "Weight"),
-       text.random = "Random EffCEt",
+       text.random = "Random Effect",
        smlab = "SMD",
        digits.sd = 2,
        leftlabs=c("", "n", "M","SD", "n", "M", "SD"),
